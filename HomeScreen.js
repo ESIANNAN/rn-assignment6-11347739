@@ -11,7 +11,9 @@ export default function App() {
       <Image source={require('./assets/shoppingBag.png')} style={styles.shoppingIcon} />
 </View>
 
- <Text style={styles.ourStoryText}>OUR STORY</Text>
+ <View>
+    <Text style={styles.ourStoryText}>OUR STORY</Text>
+  </View>
 
     <StatusBar style="auto" />
  </View>
@@ -36,5 +38,10 @@ const styles = StyleSheet.create({
   },
   searchIcon: {
     marginRight: 15,
+  },
+    ourStoryText: {
+    marginTop: -670,
+    fontSize: 24 ,
+    fontFamily: 'serif',    
   },
 });
