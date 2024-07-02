@@ -11,11 +11,11 @@ export default function App() {
       <Image source={require('./assets/shoppingBag.png')} style={styles.shoppingIcon} />
 </View>
 
- <View>
-    <Text style={styles.ourStoryText}>OUR STORY</Text>
-    <Image source={require('./assets/Filter (1).png')} style={styles.menuIcon} />
-    <Image source={require('./assets/Listview.png')} style={styles.menuIcon} />
-</View>
+  <View style={styles.secondNav} >
+        <Text style={styles.ourStoryText}>OUR STORY</Text>
+        <Image source={require('./assets/Filter (1).png')} style={styles.filterIcon} />
+        <Image source={require('./assets/Listview.png')} style={styles.listIcon} />
+    </View>
 
     <StatusBar style="auto" />
  </View>
