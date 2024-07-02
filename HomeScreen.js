@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   },
   
   pictureRow: {
-    marginLeft: 20,
+    marginLeft: 15,
   },
   picture: {
     borderRadius:15,
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     fontFamily: 'serif',
   },
   description: {
-    fontSize:14,
+    fontSize:13,
     fontFamily: 'serif',
     color: 'grey',
   },
