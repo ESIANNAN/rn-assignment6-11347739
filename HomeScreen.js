@@ -19,4 +19,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+    navigationBar: {
+    flexDirection: 'row',
+  },
 });
