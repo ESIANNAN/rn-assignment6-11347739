@@ -41,9 +41,18 @@ const styles = StyleSheet.create({
   searchIcon: {
     marginRight: 15,
   },
-    ourStoryText: {
+    secondNav: {
+    flexDirection:'row',
+  },
+  ourStoryText: {
     marginTop: -670,
     fontSize: 26,
-    fontFamily: 'serif',    
+    fontFamily: 'serif',
+  },
+  filterIcon: {
+    marginTop: -670,
+  },
+  listIcon: {
+    marginTop: -670,
   },
 });
