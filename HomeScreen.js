@@ -146,4 +146,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'serif',
   },
+   description: {
+    fontSize:14,
+    fontFamily: 'serif',
+    color: 'grey',
+  },
+  cost: {
+    fontSize:20,
+    fontFamily: 'serif',
+    color: 'orange', 
+  },
 });
