@@ -52,9 +52,13 @@ const styles = StyleSheet.create({
   filterIcon: {
     marginTop: -670,
     marginLeft: 100,
+    width: 30,
+    height: 30,
   },
   listIcon: {
     marginTop: -670,
     marginLeft: 20,
+    width: 30,
+    height: 30,
   },
 });
