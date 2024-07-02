@@ -20,11 +20,11 @@ export default function App() {
 
     <View style={styles.pictureContainer}>
         <View style={styles.pictureRow}>
-            <View style={styles.card}>
+         <View style={styles.card}>
                 <Image source={require('./assets/dress1.png')} style={styles.picture} />
-                <Text> Office Wear</Text>
-                <Text>reversible angora cardigan</Text>
-                <Text>$120</Text>
+                <Text style={styles.form}> Office Wear</Text>
+                <Text style={styles.description}>reversible angora cardigan</Text>
+                <Text style={styles.cost}>$120</Text>
             </View>
             <View style={styles.card}>
                 <Image source={require('./assets/dress2.png')} style={styles.picture} />
