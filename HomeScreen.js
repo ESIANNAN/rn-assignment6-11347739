@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
     ourStoryText: {
     marginTop: -670,
-    fontSize: 24 ,
+    fontSize: 26,
     fontFamily: 'serif',    
   },
 });
