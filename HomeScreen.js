@@ -20,7 +20,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-    navigationBar: {
+  navigationBar: {
     flexDirection: 'row',
+    flex: 1,
+    marginTop: 70,
+    
   },
 });
