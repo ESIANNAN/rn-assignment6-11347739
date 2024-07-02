@@ -77,8 +77,16 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
   },
-    pictureContainer: {
+   pictureContainer: {
     flexDirection: 'row',
     marginTop: 30,
+    marginRight: 25,
   },
+  picture: {
+    marginBottom: 80, 
+  },
+  pictureRow: {
+    marginLeft: 20,
+  },
+  
 });
