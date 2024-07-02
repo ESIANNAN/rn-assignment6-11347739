@@ -137,6 +137,9 @@ const styles = StyleSheet.create({
   },
   picture: {
     borderRadius:15,
+    marginBottom: 15,
   },
-  
+   card: {
+    marginBottom: 15,
+  },
 });
