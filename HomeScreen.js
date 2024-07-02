@@ -20,10 +20,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  navigationBar: {
+ navigationBar: {
     flexDirection: 'row',
     flex: 1,
     marginTop: 70,
-    
+  },
+  menuIcon: {
+    marginRight: 80,
+  },
+  logoIcon: {
+    marginRight: 60,
+  },
+  searchIcon: {
+    marginRight: 15,
   },
 });
