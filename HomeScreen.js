@@ -51,8 +51,10 @@ const styles = StyleSheet.create({
   },
   filterIcon: {
     marginTop: -670,
+    marginLeft: 100,
   },
   listIcon: {
     marginTop: -670,
+    marginLeft: 20,
   },
 });
