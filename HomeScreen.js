@@ -17,6 +17,20 @@ export default function App() {
         <Image source={require('./assets/Listview.png')} style={styles.listIcon} />
     </View>
 
+      <View style={styles.pictureContainer}>
+        <View style={styles.pictureRow}>
+            <Image source={require('./assets/dress1.png')} style={styles.picture} />
+            <Image source={require('./assets/dress2.png')} style={styles.picture} />
+            <Image source={require('./assets/dress3.png')} style={styles.picture} />
+            <Image source={require('./assets/dress4.png')} style={styles.picture} />
+        </View>
+        <View style={styles.pictureRow}>
+            <Image source={require('./assets/dress5.png')} style={styles.picture} />
+            <Image source={require('./assets/dress6.png')} style={styles.picture} />
+            <Image source={require('./assets/dress7.png')} style={styles.picture} />
+        </View>
+    </View>
+
     <StatusBar style="auto" />
  </View>
   );
