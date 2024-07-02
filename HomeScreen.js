@@ -61,23 +61,24 @@ const styles = StyleSheet.create({
     flexDirection:'row',
   },
   ourStoryText: {
-    marginTop: -670,
+    marginTop: 25,
     fontSize: 24,
     fontFamily: 'serif',
   },
   filterIcon: {
-    marginTop: -670,
+    marginTop: 25,
     marginLeft: 100,
     width: 30,
     height: 30,
   },
   listIcon: {
-    marginTop: -670,
+    marginTop: 25,
     marginLeft: 20,
     width: 30,
     height: 30,
   },
     pictureContainer: {
     flexDirection: 'row',
+    marginTop: 40,
   },
 });
