@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
   },
   menuIcon: {
     marginRight: 80,
+    marginLeft: 30,
   },
   logoIcon: {
     marginRight: 60,
@@ -62,12 +63,14 @@ const styles = StyleSheet.create({
   },
   ourStoryText: {
     marginTop: 30,
+    marginLeft: 30,
     fontSize: 24,
     fontFamily: 'serif',
   },
   filterIcon: {
     marginTop: 30,
-    marginLeft: 100,
+    marginLeft: 110,
+    marginRight: 10,
     width: 30,
     height: 30,
   },
