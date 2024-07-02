@@ -13,7 +13,9 @@ export default function App() {
 
  <View>
     <Text style={styles.ourStoryText}>OUR STORY</Text>
-  </View>
+    <Image source={require('./assets/Filter (1).png')} style={styles.menuIcon} />
+    <Image source={require('./assets/Listview.png')} style={styles.menuIcon} />
+</View>
 
     <StatusBar style="auto" />
  </View>
