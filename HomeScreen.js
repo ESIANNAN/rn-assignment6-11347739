@@ -86,9 +86,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginRight: 25,
   },
-  picture: {
-    marginBottom: 80, 
-  },
+ 
   pictureRow: {
     marginLeft: 20,
   },
