@@ -20,7 +20,7 @@ export default function App() {
 
     <View style={styles.pictureContainer}>
         <View style={styles.pictureRow}>
-         <View style={styles.card}>
+            <View style={styles.card}>
                 <Image source={require('./assets/dress1.png')} style={styles.picture} />
                 <Text style={styles.form}> Office Wear</Text>
                 <Text style={styles.description}>reversible angora cardigan</Text>
@@ -28,47 +28,47 @@ export default function App() {
             </View>
             <View style={styles.card}>
                 <Image source={require('./assets/dress2.png')} style={styles.picture} />
-                <Text>Black</Text>
-                <Text>reversible angora cardigan</Text>
-                <Text>$120</Text>
+                <Text style={styles.form}>Black</Text>
+                <Text style={styles.description}>reversible angora cardigan</Text>
+                <Text style={styles.cost}>$120</Text>
             </View>
             <View style={styles.card}>
                 <Image source={require('./assets/dress3.png')} style={styles.picture} />
-                <Text>Church Wear</Text>
-                <Text>reversible angora cardigan</Text>
-                <Text>$120</Text>
+                <Text style={styles.form}>Church Wear</Text>
+                <Text style={styles.description}>reversible angora cardigan</Text>
+                <Text style={styles.cost}>$120</Text>
             </View>
             <View style={styles.card}>
                 <Image source={require('./assets/dress4.png')} style={styles.picture} />
-                <Text>Lamerei</Text>
-                <Text>reversible angora cardigan</Text>
-                <Text>$120</Text>
+                <Text style={styles.form}>Lamerei</Text>
+                <Text style={styles.description}>reversible angora cardigan</Text>
+                <Text style={styles.cost}>$120</Text>
             </View>  
         </View>
         <View style={styles.pictureRow}>
             <View style={styles.card}>
                 <Image source={require('./assets/dress5.png')} style={styles.picture} />
-                <Text>21WN</Text>
-                <Text>reversible angora cardigan</Text>
-                <Text>$120</Text>
+                <Text style={styles.form}>21WN</Text>
+                <Text style={styles.description}>reversible angora cardigan</Text>
+                <Text style={styles.cost}>$120</Text>
             </View>  
             <View style={styles.card}>
                 <Image source={require('./assets/dress6.png')} style={styles.picture} />
-                <Text>Lopo</Text>
-                <Text>reversible angora cardigan</Text>
-                <Text>$120</Text>
+                <Text style={styles.form}>Lopo</Text>
+                <Text style={styles.description}>reversible angora cardigan</Text>
+                <Text style={styles.cost}>$120</Text>
             </View>  
             <View style={styles.card}>
                 <Image source={require('./assets/dress7.png')} style={styles.picture} />
-                <Text>21WN</Text>
-                <Text>reversible angora cardigan</Text>
-                <Text>$120</Text>
+                <Text style={styles.form}>21WN</Text>
+                <Text style={styles.description}>reversible angora cardigan</Text>
+                <Text style={styles.cost}>$120</Text>
             </View>
             <View style={styles.card}>
                 <Image source={require('./assets/dress8.jpg')} style={styles.picture} />
-                <Text>Play suit</Text>
-                <Text>reversible angora cardigan</Text>
-                <Text>$120</Text>
+                <Text style={styles.form}>Play suit</Text>
+                <Text style={styles.description}>reversible angora cardigan</Text>
+                <Text style={styles.cost}>$120</Text>
             </View>
            
            
@@ -139,14 +139,14 @@ const styles = StyleSheet.create({
     borderRadius:15,
     marginBottom: 15,
   },
-   card: {
+  card: {
     marginBottom: 15,
   },
   form: {
     fontSize: 20,
     fontFamily: 'serif',
   },
-   description: {
+  description: {
     fontSize:14,
     fontFamily: 'serif',
     color: 'grey',
