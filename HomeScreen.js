@@ -11,7 +11,7 @@ export default function App() {
       <Image source={require('./assets/shoppingBag.png')} style={styles.shoppingIcon} />
 </View>
 
-
+ <Text style={styles.ourStoryText}>OUR STORY</Text>
 
     <StatusBar style="auto" />
  </View>
