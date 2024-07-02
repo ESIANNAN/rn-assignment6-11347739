@@ -135,5 +135,8 @@ const styles = StyleSheet.create({
   pictureRow: {
     marginLeft: 20,
   },
+  picture: {
+    borderRadius:15,
+  },
   
 });
