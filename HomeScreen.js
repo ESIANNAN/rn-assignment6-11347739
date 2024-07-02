@@ -29,6 +29,7 @@ export default function App() {
             <Image source={require('./assets/dress5.png')} style={styles.picture} />
             <Image source={require('./assets/dress6.png')} style={styles.picture} />
             <Image source={require('./assets/dress7.png')} style={styles.picture} />
+            <Image source={require('./assets/dress8.jpg')} style={styles.picture} />
         </View>
     </View>
 
