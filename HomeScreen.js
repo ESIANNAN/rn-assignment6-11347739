@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   ourStoryText: {
     marginTop: -670,
-    fontSize: 26,
+    fontSize: 24,
     fontFamily: 'serif',
   },
   filterIcon: {
