@@ -142,4 +142,8 @@ const styles = StyleSheet.create({
    card: {
     marginBottom: 15,
   },
+  form: {
+    fontSize: 20,
+    fontFamily: 'serif',
+  },
 });
