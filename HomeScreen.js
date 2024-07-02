@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function App() {
   return (
+<ScrollView contentContainerStyle={styles.scrollContainer}>
 <View style={styles.container}>
     <View style={styles.navigationBar}>
       <Image source={require('./assets/Menu.png')} style={styles.menuIcon} />
@@ -33,6 +34,7 @@ export default function App() {
 
     <StatusBar style="auto" />
  </View>
+ </ScrollView>
   );
 }
 
