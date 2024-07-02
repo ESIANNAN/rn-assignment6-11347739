@@ -4,9 +4,10 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 export default function App() {
   return (
     <View style={styles.navigationBar}>
-      <Image source={require('./assets/Menu.png')} style={styles.menuIcon} />
-      <Image source={require('./assets/Logo.png')} style={styles.menuIcon} />
-      <Image source={require('./assets/shoppingBag.png')} style={styles.menuIcon} />
+      <Image source={require('./assets/Menu.png')} style={styles.navigationIcon} />
+      <Image source={require('./assets/Logo.png')} style={styles.navigationIcon} />
+      <Image source={require('./assets/Search (1).png')} style={styles.naviggationIcon} />
+      <Image source={require('./assets/shoppingBag.png')} style={styles.navigationIcon} />
       <StatusBar style="auto" />
     </View>
   );
