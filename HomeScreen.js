@@ -5,13 +5,31 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'rea
 export default function App() {
   const handleSearch = () => {
     console.log('Search button clicked');
+    // Implement your search logic here
+  };
+
+  const handleMenu = () => {
+    console.log('Menu button clicked');
+    // Implement your menu navigation logic here
+  };
+
+  const handleFilter = () => {
+    console.log('Filter button clicked');
+    // Implement your filter logic here
+  };
+
+  const handleListView = () => {
+    console.log('List view button clicked');
+    // Implement your list view logic here
   };
 
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
         <View style={styles.navigationBar}>
-          <Image source={require('./assets/Menu.png')} style={styles.menuIcon} />
+          <TouchableOpacity onPress={handleMenu}>
+            <Image source={require('./assets/Menu.png')} style={styles.menuIcon} />
+          </TouchableOpacity>
           <Image source={require('./assets/Logo.png')} style={styles.logoIcon} />
           <TouchableOpacity onPress={handleSearch}>
             <Image source={require('./assets/Search (1).png')} style={styles.searchIcon} />
@@ -21,8 +39,12 @@ export default function App() {
 
         <View style={styles.secondNav} >
           <Text style={styles.ourStoryText}>OUR STORY</Text>
-          <Image source={require('./assets/Filter (1).png')} style={styles.filterIcon} />
-          <Image source={require('./assets/Listview.png')} style={styles.listIcon} />
+          <TouchableOpacity onPress={handleFilter}>
+            <Image source={require('./assets/Filter (1).png')} style={styles.filterIcon} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleListView}>
+            <Image source={require('./assets/Listview.png')} style={styles.listIcon} />
+          </TouchableOpacity>
         </View>
 
         <View style={styles.pictureContainer}>
@@ -156,5 +178,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'serif',
     color: 'orange',
+  },
+  scrollContainer: {
+    flexGrow: 1,
   },
 });
