@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
   navigationBar: {
     flexDirection: 'row',
     flex: 1,
-    marginTop: 70,
   },
   menuIcon: {
     marginRight: 80,
