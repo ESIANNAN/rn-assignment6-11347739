@@ -34,5 +34,11 @@ const styles = StyleSheet.create({
   searchIcon: {
     marginLeft: 90,
   },
+   checkout: {
+    marginLeft: 80,
+    marginTop: 40,
+    fontSize: 24,
+    fontFamily: 'serif',
+ },
   
 });
