@@ -32,7 +32,7 @@ export default function App() {
           </TouchableOpacity>
           <Image source={require('./assets/Logo.png')} style={styles.logoIcon} />
           <TouchableOpacity onPress={handleSearch}>
-            <Image source={require('./assets/Search (1).png')} style={styles.searchIcon} />
+            <Image source={require('./assets/Search.png')} style={styles.searchIcon} />
           </TouchableOpacity>
           <TouchableOpacity onPress={handleShoppingBag}>
             <Image source={require('./assets/shoppingBag.png')} style={styles.shoppingIcon} />
@@ -42,7 +42,7 @@ export default function App() {
         <View style={styles.secondNav}>
           <Text style={styles.ourStoryText}>OUR STORY</Text>
           <TouchableOpacity onPress={handleFilter}>
-            <Image source={require('./assets/Filter (1).png')} style={styles.filterIcon} />
+            <Image source={require('./assets/Filter.png')} style={styles.filterIcon} />
           </TouchableOpacity>
           <TouchableOpacity onPress={handleListView}>
             <Image source={require('./assets/Listview.png')} style={styles.listIcon} />
