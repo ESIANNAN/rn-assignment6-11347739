@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 
-export default function App() {
+const products = [
+  { id: 1, name: 'Office Wear', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress1.png') },
+  { id: 2, name: 'Black', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress2.png') },
+  { id: 3, name: 'Church Wear', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress3.png') },
+  { id: 4, name: 'Lamerei', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress4.png') },
+  { id: 5, name: '21WN', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress5.png') },
+  { id: 6, name: 'Lopo', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress6.png') },
+  { id: 7, name: '21WN', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress7.png') },
+  { id: 8, name: 'Play suit', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress8.jpg') },
+];
+
+const HomeScreen = () => {
   const handleSearch = () => {
     console.log('Search button clicked');
   };
@@ -21,6 +32,11 @@ export default function App() {
 
   const handleShoppingBag = () => {
     console.log('Shopping bag clicked');
+  };
+
+  const addToCart = (productName) => {
+    console.log(`Added ${productName} to cart`);
+    // Implement your cart functionality here
   };
 
   return (
@@ -50,140 +66,128 @@ export default function App() {
         </View>
 
         <View style={styles.pictureContainer}>
-          <View style={styles.pictureRow}>
-            <View style={styles.card}>
-              <Image source={require('./assets/dress1.png')} style={styles.picture} />
-              <Text style={styles.form}> Office Wear</Text>
-              <Text style={styles.description}>reversible angora cardigan</Text>
-              <Text style={styles.cost}>$120</Text>
+          {products.map((product) => (
+            <View key={product.id} style={styles.card}>
+              <Image source={product.image} style={styles.picture} />
+              <Text style={styles.form}>{product.name}</Text>
+              <Text style={styles.description}>{product.description}</Text>
+              <Text style={styles.cost}>{product.price}</Text>
+              <TouchableOpacity
+                style={styles.addToCartButton}
+                onPress={() => addToCart(product.name)}
+              >
+                <Image
+                  source={require('./assets/add.png')}
+                  style={styles.addToCartIcon}
+                />
+              </TouchableOpacity>
             </View>
-            <View style={styles.card}>
-              <Image source={require('./assets/dress2.png')} style={styles.picture} />
-              <Text style={styles.form}>Black</Text>
-              <Text style={styles.description}>reversible angora cardigan</Text>
-              <Text style={styles.cost}>$120</Text>
-            </View>
-            <View style={styles.card}>
-              <Image source={require('./assets/dress3.png')} style={styles.picture} />
-              <Text style={styles.form}>Church Wear</Text>
-              <Text style={styles.description}>reversible angora cardigan</Text>
-              <Text style={styles.cost}>$120</Text>
-            </View>
-            <View style={styles.card}>
-              <Image source={require('./assets/dress4.png')} style={styles.picture} />
-              <Text style={styles.form}>Lamerei</Text>
-              <Text style={styles.description}>reversible angora cardigan</Text>
-              <Text style={styles.cost}>$120</Text>
-            </View>
-          </View>
-          <View style={styles.pictureRow}>
-            <View style={styles.card}>
-              <Image source={require('./assets/dress5.png')} style={styles.picture} />
-              <Text style={styles.form}>21WN</Text>
-              <Text style={styles.description}>reversible angora cardigan</Text>
-              <Text style={styles.cost}>$120</Text>
-            </View>
-            <View style={styles.card}>
-              <Image source={require('./assets/dress6.png')} style={styles.picture} />
-              <Text style={styles.form}>Lopo</Text>
-              <Text style={styles.description}>reversible angora cardigan</Text>
-              <Text style={styles.cost}>$120</Text>
-            </View>
-            <View style={styles.card}>
-              <Image source={require('./assets/dress7.png')} style={styles.picture} />
-              <Text style={styles.form}>21WN</Text>
-              <Text style={styles.description}>reversible angora cardigan</Text>
-              <Text style={styles.cost}>$120</Text>
-            </View>
-            <View style={styles.card}>
-              <Image source={require('./assets/dress8.jpg')} style={styles.picture} />
-              <Text style={styles.form}>Play suit</Text>
-              <Text style={styles.description}>reversible angora cardigan</Text>
-              <Text style={styles.cost}>$120</Text>
-            </View>
-          </View>
+          ))}
         </View>
 
         <StatusBar style="auto" />
       </View>
     </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
   },
   navigationBar: {
     flexDirection: 'row',
-    flex: 1,
+    alignItems: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    width: '100%',
   },
   menuIcon: {
-    marginRight: 80,
-    marginLeft: 30,
+    marginRight: 20,
   },
   logoIcon: {
-    marginRight: 60,
+    flex: 1,
+    marginRight: 20,
   },
   searchIcon: {
-    marginRight: 25,
+    marginRight: 20,
+  },
+  shoppingIcon: {
+    marginRight: 20,
   },
   secondNav: {
     flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    marginTop: 10,
+    width: '100%',
   },
   ourStoryText: {
-    marginTop: 30,
-    marginLeft: 30,
     fontSize: 24,
     fontFamily: 'serif',
   },
   filterIcon: {
-    marginTop: 30,
-    marginLeft: 110,
+    marginLeft: 'auto',
     marginRight: 10,
-    width: 30,
-    height: 30,
   },
   listIcon: {
-    marginTop: 30,
-    marginLeft: 20,
-    width: 30,
-    height: 30,
+    marginRight: 10,
   },
   pictureContainer: {
     flexDirection: 'row',
-    marginTop: 30,
-    marginRight: 25,
-  },
-  pictureRow: {
-    marginLeft: 15,
-  },
-  picture: {
-    borderRadius: 15,
-    marginBottom: 15,
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginTop: 20,
+    paddingHorizontal: 10,
   },
   card: {
-    marginBottom: 15,
+    width: 160,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    padding: 10,
+    margin: 10,
+    alignItems: 'center',
+  },
+  picture: {
+    width: 120,
+    height: 120,
+    borderRadius: 10,
   },
   form: {
-    fontSize: 20,
+    fontSize: 16,
     fontFamily: 'serif',
+    marginTop: 5,
+    textAlign: 'center',
   },
   description: {
-    fontSize: 13,
-    fontFamily: 'serif',
     color: 'grey',
+    fontSize: 12,
+    textAlign: 'center',
   },
   cost: {
-    fontSize: 20,
+    fontSize: 16,
     fontFamily: 'serif',
     color: 'orange',
+    marginTop: 5,
+    textAlign: 'center',
   },
-  shoppingIcon: {
-    marginRight: 25,
+  addToCartButton: {
+    marginTop: 10,
+  },
+  addToCartIcon: {
+    width: 30,
+    height: 30,
+    resizeMode: 'contain',
   },
   scrollContainer: {
     flexGrow: 1,
   },
 });
+
+export default HomeScreen;
