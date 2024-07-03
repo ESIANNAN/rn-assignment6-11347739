@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
     fontSize: 24,
     fontFamily: 'serif',
+     color: 'grey',
  },
   
 });
