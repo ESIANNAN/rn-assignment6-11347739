@@ -23,6 +23,11 @@ export default function App() {
     // Implement your list view logic here
   };
 
+  const handleShoppingBag = () => {
+    console.log('Shopping bag clicked');
+    // Implement your shopping bag logic here
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
@@ -34,10 +39,12 @@ export default function App() {
           <TouchableOpacity onPress={handleSearch}>
             <Image source={require('./assets/Search (1).png')} style={styles.searchIcon} />
           </TouchableOpacity>
-          <Image source={require('./assets/shoppingBag.png')} style={styles.shoppingIcon} />
+          <TouchableOpacity onPress={handleShoppingBag}>
+            <Image source={require('./assets/shoppingBag.png')} style={styles.shoppingIcon} />
+          </TouchableOpacity>
         </View>
 
-        <View style={styles.secondNav} >
+        <View style={styles.secondNav}>
           <Text style={styles.ourStoryText}>OUR STORY</Text>
           <TouchableOpacity onPress={handleFilter}>
             <Image source={require('./assets/Filter (1).png')} style={styles.filterIcon} />
@@ -178,6 +185,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'serif',
     color: 'orange',
+  },
+  shoppingIcon: {
+    marginRight: 25,
   },
   scrollContainer: {
     flexGrow: 1,
