@@ -25,5 +25,12 @@ const styles = StyleSheet.create({
   navigationBar: {
     flexDirection: 'row',
     marginTop: 70,
-  }
+  },
+  logoIcon: {
+    marginLeft:100 ,
+  },
+  searchIcon: {
+    marginLeft: 90,
+  },
+  
 });
