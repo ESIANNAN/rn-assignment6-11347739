@@ -1,19 +1,7 @@
-import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 
-const products = [
-  { id: 1, name: 'Office Wear', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress1.png') },
-  { id: 2, name: 'Black', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress2.png') },
-  { id: 3, name: 'Church Wear', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress3.png') },
-  { id: 4, name: 'Lamerei', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress4.png') },
-  { id: 5, name: '21WN', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress5.png') },
-  { id: 6, name: 'Lopo', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress6.png') },
-  { id: 7, name: '21WN', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress7.png') },
-  { id: 8, name: 'Play suit', description: 'reversible angora cardigan', price: '$120', image: require('./assets/dress8.jpg') },
-];
-
-const HomeScreen = () => {
+export default function Homescreen({ navigation, cart, setCart }) {
   const handleSearch = () => {
     console.log('Search button clicked');
   };
@@ -30,14 +18,21 @@ const HomeScreen = () => {
     console.log('List view button clicked');
   };
 
-  const handleShoppingBag = () => {
-    console.log('Shopping bag clicked');
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+    alert('${item.title} added to cart!');
   };
 
-  const addToCart = (productName) => {
-    console.log(`Added ${productName} to cart`);
-    // Implement your cart functionality here
-  };
+  const items = [
+    { id: 1, source: require('./assets/dress1.png'), title: 'OFFICE WEAR', description: 'Reversible Angora Cardigan', price: '$120' },
+    { id: 2, source: require('./assets/dress2.png'), title: 'BLACK', description: 'Reversible Angora Cardigan', price: '$125' },
+    { id: 3, source: require('./assets/dress3.png'), title: 'CHURCH WEAR', description: 'Reversible Angora Cardigan', price: '$130' },
+    { id: 4, source: require('./assets/dress4.png'), title: 'LAMEREI', description: 'Reversible Angora Cardigan', price: '$138' },
+    { id: 5, source: require('./assets/dress5.png'), title: '21WN', description: 'Reversible Angora Cardigan', price: '$140' },
+    { id: 6, source: require('./assets/dress6.png'), title: 'LOPO', description: 'Reversible Angora Cardigan', price: '$155' },
+    { id: 7, source: require('./assets/dress7.png'), title: '21WN', description: 'Reversible Angora Cardigan', price: '$125' },
+    { id: 8, source: require('./assets/dress8.jpg'), title: 'PLAY SUIT', description: 'Reversible Angora Cardigan', price: '$145' },
+  ];
 
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -50,7 +45,7 @@ const HomeScreen = () => {
           <TouchableOpacity onPress={handleSearch}>
             <Image source={require('./assets/Search.png')} style={styles.searchIcon} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={handleShoppingBag}>
+          <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
             <Image source={require('./assets/shoppingBag.png')} style={styles.shoppingIcon} />
           </TouchableOpacity>
         </View>
@@ -66,128 +61,123 @@ const HomeScreen = () => {
         </View>
 
         <View style={styles.pictureContainer}>
-          {products.map((product) => (
-            <View key={product.id} style={styles.card}>
-              <Image source={product.image} style={styles.picture} />
-              <Text style={styles.form}>{product.name}</Text>
-              <Text style={styles.description}>{product.description}</Text>
-              <Text style={styles.cost}>{product.price}</Text>
-              <TouchableOpacity
-                style={styles.addToCartButton}
-                onPress={() => addToCart(product.name)}
-              >
-                <Image
-                  source={require('./assets/add.png')}
-                  style={styles.addToCartIcon}
-                />
-              </TouchableOpacity>
-            </View>
-          ))}
+          <View style={styles.pictureRow}>
+            {items.slice(0, 4).map(item => (
+              <View key={item.id} style={styles.card}>
+                <Image source={item.source} style={styles.picture} />
+                <Text style={styles.form}>{item.title}</Text>
+                <Text style={styles.description}>{item.description}</Text>
+                <Text style={styles.cost}>{item.price}</Text>
+                <TouchableOpacity style={styles.addButton} onPress={() => addToCart(item)}>
+                  <Text style={styles.addButtonText}>+</Text>
+                </TouchableOpacity>
+              </View>
+            ))}
+          </View>
+          <View style={styles.pictureRow}>
+            {items.slice(4).map(item => (
+              <View key={item.id} style={styles.card}>
+                <Image source={item.source} style={styles.picture} />
+                <Text style={styles.form}>{item.title}</Text>
+                <Text style={styles.description}>{item.description}</Text>
+                <Text style={styles.cost}>{item.price}</Text>
+                <TouchableOpacity style={styles.addButton} onPress={() => addToCart(item)}>
+                  <Text style={styles.addButtonText}>+</Text>
+                </TouchableOpacity>
+              </View>
+            ))}
+          </View>
         </View>
-
-        <StatusBar style="auto" />
       </View>
     </ScrollView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
   },
   navigationBar: {
     flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-    width: '100%',
+    flex: 1,
   },
   menuIcon: {
-    marginRight: 20,
+    marginRight: 80,
+    marginLeft: 30,
   },
   logoIcon: {
-    flex: 1,
-    marginRight: 20,
+    marginRight: 60,
   },
   searchIcon: {
-    marginRight: 20,
-  },
-  shoppingIcon: {
-    marginRight: 20,
+    marginRight: 25,
   },
   secondNav: {
     flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-    marginTop: 10,
-    width: '100%',
   },
   ourStoryText: {
+    marginTop: 30,
+    marginLeft: 30,
     fontSize: 24,
     fontFamily: 'serif',
   },
   filterIcon: {
-    marginLeft: 'auto',
+    marginTop: 30,
+    marginLeft: 110,
     marginRight: 10,
+    width: 30,
+    height: 30,
   },
   listIcon: {
-    marginRight: 10,
+    marginTop: 30,
+    marginLeft: 20,
+    width: 30,
+    height: 30,
   },
   pictureContainer: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    marginTop: 20,
-    paddingHorizontal: 10,
+    marginTop: 30,
+    marginRight: 25,
   },
-  card: {
-    width: 160,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 10,
-    padding: 10,
-    margin: 10,
-    alignItems: 'center',
+  pictureRow: {
+    marginLeft: 15,
   },
   picture: {
-    width: 120,
-    height: 120,
-    borderRadius: 10,
+    borderRadius: 15,
+    marginBottom: 15,
+  },
+  card: {
+    marginBottom: 15,
   },
   form: {
-    fontSize: 16,
+    fontSize: 20,
     fontFamily: 'serif',
-    marginTop: 5,
-    textAlign: 'center',
   },
   description: {
+    fontSize: 13,
+    fontFamily: 'serif',
     color: 'grey',
-    fontSize: 12,
-    textAlign: 'center',
   },
   cost: {
-    fontSize: 16,
+    fontSize: 20,
     fontFamily: 'serif',
     color: 'orange',
-    marginTop: 5,
-    textAlign: 'center',
   },
-  addToCartButton: {
-    marginTop: 10,
-  },
-  addToCartIcon: {
-    width: 30,
-    height: 30,
-    resizeMode: 'contain',
+  shoppingIcon: {
+    marginRight: 25,
   },
   scrollContainer: {
     flexGrow: 1,
   },
+  addButton: {
+    backgroundColor: 'orange',
+    padding: 5,
+    borderRadius: 5,
+    marginTop: 5,
+    alignItems: 'center',
+  },
+  addButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
 });
-
-export default HomeScreen;
