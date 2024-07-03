@@ -3,8 +3,15 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Image source={require('./assets/Logo.png')} style={styles.logoIcon} />
+  <View style={styles.container}>
+        <View style={styles.navigationBar}>
+            <Image source={require('./assets/Logo.png')} style={styles.logoIcon} />
+            <Image source={require('./assets/Search (1).png')} style={styles.searchIcon} />
+        </View>
+     
+      
+      
+      
       <StatusBar style="auto" />
     </View>
   );
