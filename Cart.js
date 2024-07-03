@@ -8,7 +8,9 @@ export default function App() {
             <Image source={require('./assets/Logo.png')} style={styles.logoIcon} />
             <Image source={require('./assets/Search (1).png')} style={styles.searchIcon} />
         </View>
-     
+        <View style={styles.secondText}>
+            <Text style={styles.checkout}>CHECKOUT</Text>
+        </View>
       
       
       
