@@ -11,6 +11,9 @@ I increased and decreased margins to position the items very carefully. The add 
 
 
 ![Screenshot 2024-07-03 225405](https://github.com/ESIANNAN/rn-assignment6-11347739/assets/150846223/0b9257f2-0ec1-42fb-9f59-f0074969435e)
+![Screenshot 2024-07-03 231025](https://github.com/ESIANNAN/rn-assignment6-11347739/assets/150846223/143ac0c8-76b6-4c7d-900e-7226755fc210)
+![Screenshot 2024-07-03 231003](https://github.com/ESIANNAN/rn-assignment6-11347739/assets/150846223/fd2ae79d-c740-4ac2-847a-0724f9dd1a24)
+
 
 
 
