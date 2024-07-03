@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
   },
   navigationBar: {
     flexDirection: 'row',
-    marginTop: 60,
+    marginTop: 70,
   }
 });
