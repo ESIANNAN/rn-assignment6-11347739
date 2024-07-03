@@ -5,27 +5,22 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'rea
 export default function App() {
   const handleSearch = () => {
     console.log('Search button clicked');
-    // Implement your search logic here
   };
 
   const handleMenu = () => {
     console.log('Menu button clicked');
-    // Implement your menu navigation logic here
   };
 
   const handleFilter = () => {
     console.log('Filter button clicked');
-    // Implement your filter logic here
   };
 
   const handleListView = () => {
     console.log('List view button clicked');
-    // Implement your list view logic here
   };
 
   const handleShoppingBag = () => {
     console.log('Shopping bag clicked');
-    // Implement your shopping bag logic here
   };
 
   return (
