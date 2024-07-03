@@ -20,7 +20,7 @@ export default function Homescreen({ navigation, cart, setCart }) {
 
   const addToCart = (item) => {
     setCart([...cart, item]);
-    alert('${item.title} added to cart!');
+    alert('item added to cart!');
   };
 
   const items = [
