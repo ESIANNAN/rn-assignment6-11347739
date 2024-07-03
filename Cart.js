@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import React from 'react';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function App() {
+export default function Cart({ cart, setCart }) {
+  const removeFromCart = (item) => {
+    setCart(cart.filter(cartItem => cartItem.id !== item.id));
+  };
+
   return (
-  <View style={styles.container}>
-        <View style={styles.navigationBar}>
-            <Image source={require('./assets/Logo.png')} style={styles.logoIcon} />
-            <Image source={require('./assets/Search.png')} style={styles.searchIcon} />
-        </View>
-        <View style={styles.secondText}>
-            <Text style={styles.checkout}>CHECKOUT</Text>
-        </View>
-      
-      
-      
-      <StatusBar style="auto" />
+    <View style={styles.container}>
+      <FlatList
+        data={cart}
+        keyExtractor={item => item.id.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.itemContainer}>
+            <Text style={styles.itemTitle}>{item.title}</Text>
+            <Text style={styles.itemDescription}>{item.description}</Text>
+            <Text style={styles.itemPrice}>{item.price}</Text>
+            <TouchableOpacity onPress={() => removeFromCart(item)} style={styles.removeButton}>
+              <Text style={styles.removeButtonText}>Remove</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      />
     </View>
   );
 }
@@ -22,24 +29,38 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 20,
     backgroundColor: '#fff',
   },
-  navigationBar: {
-    flexDirection: 'row',
-    marginTop: 70,
+  itemContainer: {
+    marginBottom: 20,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
   },
-  logoIcon: {
-    marginLeft:100 ,
+  itemTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
   },
-  searchIcon: {
-    marginLeft: 90,
+  itemDescription: {
+    fontSize: 16,
+    color: '#666',
   },
-   checkout: {
-    marginLeft: 80,
-    marginTop: 40,
-    fontSize: 24,
-    fontFamily: 'serif',
-     color: 'grey',
- },
-  
+  itemPrice: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop: 5,
+  },
+  removeButton: {
+    marginTop: 10,
+    backgroundColor: '#ff0000',
+    padding: 10,
+    borderRadius: 5,
+  },
+  removeButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
