@@ -9,6 +9,7 @@ I increased and decreased margins to position the items very carefully. The add 
 
 
 
+
 ![Screenshot 2024-07-03 225405](https://github.com/ESIANNAN/rn-assignment6-11347739/assets/150846223/0b9257f2-0ec1-42fb-9f59-f0074969435e)
 
 
