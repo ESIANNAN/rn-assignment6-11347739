@@ -20,7 +20,12 @@ export default function Homescreen({ navigation, cart, setCart }) {
 
   const addToCart = (item) => {
     setCart([...cart, item]);
-    alert(' added to cart!');
+    alert(`${item.title} added to cart!`);
+  };
+
+  const navigateToDetail = (item) => {
+    // Navigate to product detail screen with item information
+    navigation.navigate('ProductDetail', { item });
   };
 
   const items = [
@@ -63,7 +68,7 @@ export default function Homescreen({ navigation, cart, setCart }) {
         <View style={styles.pictureContainer}>
           <View style={styles.pictureRow}>
             {items.slice(0, 4).map(item => (
-              <View key={item.id} style={styles.card}>
+              <TouchableOpacity key={item.id} style={styles.card} onPress={() => navigateToDetail(item)}>
                 <Image source={item.source} style={styles.picture} />
                 <Text style={styles.form}>{item.title}</Text>
                 <Text style={styles.description}>{item.description}</Text>
@@ -71,12 +76,12 @@ export default function Homescreen({ navigation, cart, setCart }) {
                 <TouchableOpacity style={styles.addButton} onPress={() => addToCart(item)}>
                   <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
-              </View>
+              </TouchableOpacity>
             ))}
           </View>
           <View style={styles.pictureRow}>
             {items.slice(4).map(item => (
-              <View key={item.id} style={styles.card}>
+              <TouchableOpacity key={item.id} style={styles.card} onPress={() => navigateToDetail(item)}>
                 <Image source={item.source} style={styles.picture} />
                 <Text style={styles.form}>{item.title}</Text>
                 <Text style={styles.description}>{item.description}</Text>
@@ -84,7 +89,7 @@ export default function Homescreen({ navigation, cart, setCart }) {
                 <TouchableOpacity style={styles.addButton} onPress={() => addToCart(item)}>
                   <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
-              </View>
+              </TouchableOpacity>
             ))}
           </View>
         </View>
